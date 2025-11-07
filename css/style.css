@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .game-board {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 16px solid rgb(28, 119, 10);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#46beee, #e0f6ff);
+  }
+  
+  .mario {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+  }
+  
+  .pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 112px;
+    animation: pipe-animation 1s infinite linear;
+  }
+  
+  .Obsbullet {
+    position: fixed;
+    bottom: 200px;
+    width: 90px;
+    height: 90px;
+    right: -60px;
+    display: none;
+  }
+  
+  .Obsbullet.active {
+    opacity: 1;
+    animation: bullet-animation 0.2s linear;
+  }
+  
+  .score,
+  .high-score {
+    font-family: monospace;
+    font-size: 20px;
+    position: absolute;
+    top: 5%;
+    border: 3px dashed black;
+    padding: 10px;
+    background-color: white;
+    text-align: right;
+    width: 150px;
+    height: 50px;
+    display: block;
+    z-index: 1;
+  }
+  
+  .score { right: 5%; }
+  .high-score { left: 5%; }
+  
+  .game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px dashed black;
+    background-color: white;
+    text-align: center;
+    width: 250px;
+    height: 150px;
+    display: none;
+  }
+  
+  .game-over > p {
+    margin: 15px;
+    font-size: 25px;
+    font-family: monospace;
+  }
+  
+  .retry {
+    background: none;
+    color: inherit;
+    padding: 3px 5px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin: 15px;
+    font-size: 20px;
+    font-family: monospace;
+  }
+  
+  .clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+  }
+  
+  .mountains {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 200vw;
+    height: 60vh;
+    pointer-events: none;
+    z-index: 0;
+    animation: mountains-animation 30s infinite linear;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .m1, .m2, .m3, .m4, .m5 {
+    position: relative;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  .m1 {
+    width: 17vw;
+    height: 98vh;
+    background-color: #079251;
+    bottom: -16vw;
+    left: 20vw;
+  }
+  
+  .m2 {
+    width: 13vw;
+    height: 50vh;
+    background-color: #085c35;
+    bottom: -16vh;
+    left: -5vw;
+  }
+  
+  .m3 {
+    width: 15vw;
+    height: 50vh;
+    background-color: #153b29;
+    bottom: -30vh;
+    left: 0vw;
+  }
+  
+  .m4 {
+    width: 18vw;
+    height: 58vh;
+    background-color: #085c35;
+    bottom: -20vh;
+    left: 56vw;
+  }
+  
+  .m5 {
+    width: 15vw;
+    height: 50vh;
+    background-color: #153b29;
+    bottom: -30vh;
+    left: 30vw;
+  }
+  
+  @keyframes jump {
+    0%   { bottom: 0; }
+    40%  { bottom: 180px; }
+    50%  { bottom: 180px; }
+    60%  { bottom: 180px; }
+    100% { bottom: 0; }
+  }
+  
+  .jump {
+    animation: jump 500ms infinite ease-out;
+  }
+  
+  @keyframes pipe-animation {
+    from { right: -80px; }
+    to   { right: 100%; }
+  }
+  
+  @keyframes bullet-animation {
+    from { right: -80px; }
+    to   { right: 100%; }
+  }
+  
+  @keyframes clouds-animation {
+    from { right: -550px; }
+    to   { right: 100%; }
+  }
+  
+  @keyframes mountains-animation {
+    from { left: 100vw; }
+    to   { left: -200vw; }
+  }

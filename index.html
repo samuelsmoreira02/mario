@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer=""></script>
+
+    <title>Super Mario Game - lUAN</title>
+  </head>
+
+  <body>
+    <div class="game-board">
+      <div class="score">0</div>
+      <div class="high-score">
+        HI
+        <span id="high-score">0</span>
+      </div>
+      
+      
+      <div class="mountains">
+        <div class="m1"></div>
+        <div class="m2"></div>
+        <div class="m3"></div>
+
+        <div class="m4"></div>
+        <div class="m5"></div>
+      </div>
+
+      <img src="images/clouds.png" class="clouds">
+      <img src="images/mario.gif" class="mario">
+      <img src="images/pipe.png" class="pipe">
+      
+    </div>
+
+
+    <div>
+      <audio class="gamesound" id="backgroundMusic" src="media/game.mp3"></audio>
+      <audio class="die" id="soundMarioDie" src="media/mariodie.wav"></audio>
+      <audio class="jumpMario" id="soundJump" src="media/jump.wav"></audio>
+      <audio class="power" src="media/powerup.wav"></audio>
+    </div>
+    
+    <div class="Obst">
+      <img src="images/bullet.png" class="Obsbullet">
+    </div>
+    
+
+    
+    <div class="game-over">
+      <p>Game over!</p>
+      <button class="retry">Retry now</button>
+    </div>
+  
+
+</body></html>
